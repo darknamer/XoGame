@@ -9,7 +9,15 @@ public class XoGame {
     private String _nameOfWinner = "-";
     private int _count = 0;
 
+    /**
+     * Constructor to set a game
+     */
     public XoGame() {
+        _table = new String[][]{
+                {"-", "-", "-"},
+                {"-", "-", "-"},
+                {"-", "-", "-"}
+        };
         reset();
     }
 
@@ -50,6 +58,11 @@ public class XoGame {
         }
     }
 
+    /**
+     * Set position not dependency with turn player
+     * @param x int
+     * @param y int
+     */
     public void setPosition(int x, int y) {
         if (_hasWinner) {
             return;
@@ -106,6 +119,9 @@ public class XoGame {
         return _nameOfWinner.equals(_yPlayer);
     }
 
+    /**
+     * Reset game to new game round.
+     */
     public void reset() {
         _table = new String[][]{
                 {"-", "-", "-"},
